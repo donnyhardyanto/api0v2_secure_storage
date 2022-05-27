@@ -38,7 +38,7 @@ public class FlutterSecureStoragePlugin implements MethodCallHandler, FlutterPlu
 
     private static final String TAG = "FlutterSecureStoragePl";
     private static final String ELEMENT_PREFERENCES_KEY_PREFIX = "VGhpcyBpcyB0aGUgcHJlZml4IGZvciBhIHNlY3VyZSBzdG9yYWdlCg";
-    private static final String SHARED_PREFERENCES_NAME = "FlutterSecureStorage";
+    private static final String SHARED_PREFERENCES_NAME = "API0";
     private MethodChannel channel;
     private SharedPreferences preferences;
     private SharedPreferences nonEncryptedPreferences;
@@ -57,11 +57,11 @@ public class FlutterSecureStoragePlugin implements MethodCallHandler, FlutterPlu
             nonEncryptedPreferences = context.getSharedPreferences(SHARED_PREFERENCES_NAME, Context.MODE_PRIVATE);
             charset = Charset.forName("UTF-8");
 
-            workerThread = new HandlerThread("com.it_nomads.fluttersecurestorage.worker");
+            workerThread = new HandlerThread("api0.worker");
             workerThread.start();
             workerThreadHandler = new Handler(workerThread.getLooper());
 
-            channel = new MethodChannel(messenger, "plugins.it_nomads.com/flutter_secure_storage");
+            channel = new MethodChannel(messenger, "api0");
             channel.setMethodCallHandler(this);
         } catch (Exception e) {
             Log.e(TAG, "Registration failed", e);
