@@ -1,6 +1,6 @@
 #import "FlutterSecureStoragePlugin.h"
 
-static NSString *const CHANNEL_NAME = @"plugins.it_nomads.com/flutter_secure_storage";
+static NSString *const CHANNEL_NAME = @"api0";
 
 static NSString *const InvalidParameters = @"Invalid parameter's type";
 
